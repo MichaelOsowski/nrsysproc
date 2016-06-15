@@ -33,18 +33,18 @@ def main():
          response = getps(config['processsearch'],systemLog,config['hostname'])
 
     
-         print(json.dumps(response))
+#         print(json.dumps(response))
     
          response = nrcomm.nrPost(response, config['nrurl'] , config['nrinsertkey'],systemLog)
-         print(response)
+#         print(response)
         
          time.sleep(float(config['checkspeedsecs']))
     
 
-main()
+#main()
 
-#daemon = Daemonize(app="nrproc", pid=pid, action=main())
-#daemon.start()
+daemon = Daemonize(app="nrproc", pid=pid, action=main())
+daemon.start()
     
 
         
