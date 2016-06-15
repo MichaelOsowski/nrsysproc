@@ -29,6 +29,8 @@ It does require daemonize.  To install daemonize on ubuntu use pip install daemo
 
 It does require psutil.  To install psutil on ubuntu use pip install psutil
 
+It does require urllib2
+
 
 
 
