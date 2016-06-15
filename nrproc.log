@@ -53,3 +53,8 @@ INFO:root:Start
 INFO:root:Start
 INFO:root:Start
 INFO:root:Start
+INFO:root:Start
+INFO:root:Start
+ERROR:__NR___:failed NR HTTP Call
+ERROR:__NR___:failed NR HTTP Call
+ERROR:__NR___:failed NR HTTP Call

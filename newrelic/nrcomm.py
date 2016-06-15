@@ -11,7 +11,7 @@ import logging
 def nrPost(injson, inurl, inlickey,inlogging,inConfig):
     
     if (len(inConfig['proxyserver'])>0):
-        proxyString = inConfig['username'] + ":" + inConfig['password'] + "@" + inConfig['proxyserver'] + ":" + inConfig['proxyport']
+        proxyString = inConfig['proxyuser'] + ":" + inConfig['proxypass'] + "@" + inConfig['proxyserver'] + ":" + inConfig['proxyport']
         proxystuff={'http':[],'https':[]}
         proxystuff['http'].append(proxyString)
         proxystuff['https'].append(proxyString)
