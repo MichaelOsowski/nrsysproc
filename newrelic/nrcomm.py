@@ -12,13 +12,14 @@ def nrPost(injson, inurl, inlickey,inlogging,inConfig):
     
     if (len(inConfig['proxyserver'])>0):
         proxyString = inConfig['proxyuser'] + ":" + inConfig['proxypass'] + "@" + inConfig['proxyserver'] + ":" + inConfig['proxyport']
-        proxystuff={'http':[],'https':[]}
-        proxystuff['http'].append(proxyString)
-        proxystuff['https'].append(proxyString)
+        proxystuff={'http':'','https':''}
+        proxystuff['http']=proxyString
+        proxystuff['https'] = proxyString
+
 
         proxy = urllib2.ProxyHandler(proxystuff)
-
-        opener = urllib2.build_opener(proxy)
+        auth = urllib2.HTTPBasicAuthHandler()
+        opener = urllib2.build_opener(proxy,auth,urllib2.HTTPBasicAuthHandler)
         urllib2.install_opener(opener)
         
     
