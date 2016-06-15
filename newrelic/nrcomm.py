@@ -17,8 +17,8 @@ def nrPost(injson, inurl, inlickey,inlogging,inConfig):
         proxystuff['https'].append(proxyString)
 
         proxy = urllib2.ProxyHandler(proxystuff)
-        auth = urllib2.HTTPBasicAuthHandler()
-        opener = urllib2.build_opener(proxy, auth, urllib2.HTTPHandler)
+
+        opener = urllib2.build_opener(proxy)
         urllib2.install_opener(opener)
         
     
