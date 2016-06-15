@@ -35,7 +35,7 @@ def main():
     
 #         print(json.dumps(response))
     
-         response = nrcomm.nrPost(response, config['nrurl'] , config['nrinsertkey'],systemLog)
+         response = nrcomm.nrPost(response, config['nrurl'] , config['nrinsertkey'],systemLog,config)
 #         print(response)
         
          time.sleep(float(config['checkspeedsecs']))

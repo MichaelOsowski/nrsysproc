@@ -14,6 +14,7 @@ def getps(inRegex,inlogging,shostname):
     response=[]
     pinfo=[]
     
+    
    
     
     regex=re.compile(inRegex)
@@ -38,7 +39,6 @@ def getps(inRegex,inlogging,shostname):
             testexe = str(pinfo['cmdline'])
             if regex.search(testexe) is not None:
                 
-                
                 singleresponse={}
                 singleresponse['eventType'] = "SystemStat"
                 singleresponse['hostname'] = pshost
@@ -55,10 +55,22 @@ def getps(inRegex,inlogging,shostname):
                     pass    
                 singleresponse['pid'] = pinfo['pid']
                 singleresponse['memory'] = pinfo['memory_percent']
-                singleresponse['commandline'] = pinfo['cmdline']
+                
+                
+                cleancommand = pinfo['cmdline']
+                fixedcomm =''
+                for mycomm in cleancommand:
+                    
+                    fixedcomm = fixedcomm + " " + mycomm 
+                     
+           
+                
+                
+                
+                singleresponse['commandline'] = fixedcomm
                 response.append(singleresponse)
                 
-#                print(singleresponse)
+                #print(singleresponse)
             
 
             

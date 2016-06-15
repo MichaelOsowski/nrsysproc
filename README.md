@@ -9,15 +9,27 @@ NRINSERTKEY: ~~~~~~~~~~~~~~~~~ is the X-Insert-Key
 
 LOGFILE: nrproc.log name of logfile
 
-CHECKSPEEDSECS: 3 Frequency in Seconds to check processes
+CHECKSPEEDSECS: 10 Frequency in Seconds to check processes
 
 HOSTNAME:  (optional) Hostname is pick up from OS but this will override that action
+
+PROXYSERVER: Name or IP of proxy server
+
+PROXYPORT: Port for Proxy Server
+
+PROXYUSER: username of User for proxy
+
+PROXYPASS: Password for Proxy
 
 
 Install is simple unzip in directory execute nrprocmain.py.  It is deamonized with the PID in tmp.  
 
 It does require daemonize.  To install daemonize on ubuntu use pip install daemonize
 [daemonize](https://pypi.python.org/pypi/daemonize/)
+
+It does require psutil.  To install psutil on ubuntu use pip install psutil
+
+
 
 
 

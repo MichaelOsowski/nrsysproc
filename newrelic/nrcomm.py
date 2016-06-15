@@ -8,7 +8,19 @@ import json
 import urllib2
 import logging
 
-def nrPost(injson, inurl, inlickey,inlogging):
+def nrPost(injson, inurl, inlickey,inlogging,inConfig):
+    
+    if (len(inConfig['proxyserver'])>0):
+        proxyString = inConfig['username'] + ":" + inConfig['password'] + "@" + inConfig['proxyserver'] + ":" + inConfig['proxyport']
+        proxystuff={'http':[],'https':[]}
+        proxystuff['http'].append(proxyString)
+        proxystuff['https'].append(proxyString)
+
+        proxy = urllib2.ProxyHandler(proxystuff)
+        auth = urllib2.HTTPBasicAuthHandler()
+        opener = urllib2.build_opener(proxy, auth, urllib2.HTTPHandler)
+        urllib2.install_opener(opener)
+        
     
     req = urllib2.Request(inurl)
     req.add_header('Content-Type', 'application/json')
