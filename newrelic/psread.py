@@ -41,6 +41,7 @@ def getps(inRegex,inlogging,shostname):
                 singleresponse['eventType'] = "SystemStat"
                 singleresponse['hostname'] = pshost
                 singleresponse['cpu'] = pinfo['cpu_percent']
+                singleresponse['pagefults'] = pinfo['memory_info']
                 singleresponse['pid'] = pinfo['pid']
                 singleresponse['memory'] = pinfo['memory_percent']
                 singleresponse['commandline'] = pinfo['cmdline']

@@ -28,14 +28,13 @@ def main():
  
 
 
-#        response = getps(config['processsearch'],systemLog,config['hostname'])
-         p = psutil.Process()
-         print(p.memory_info())
+         response = getps(config['processsearch'],systemLog,config['hostname'])
+
     
-#        print(json.dumps(response))
+         print(json.dumps(response))
     
-#        response = nrcomm.nrPost(response, config['nrurl'] , config['nrinsertkey'],systemLog)
-#        print(response)
+         response = nrcomm.nrPost(response, config['nrurl'] , config['nrinsertkey'],systemLog)
+         print(response)
         
          time.sleep(float(config['checkspeedsecs']))
     
